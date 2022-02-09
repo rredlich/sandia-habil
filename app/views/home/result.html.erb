@@ -1,0 +1,43 @@
+<div class="container mt-5 mb-3">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <h5 class="text-secondary"><a class="link-secondary text-decoration-none" href="/">🍉 SANDÍA HÁBIL</a></h5>
+            <h4 class="display-6 text-black-50 mb-3">
+                Empezando el <span class="text-body"><%= @startDate %></span>,<br>
+                <span class="text-body"><%= @workingDaysCnt %></span> días hábiles<br>
+                terminan el <span class="text-body"><%= @newDate %></span>
+            </h4>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <small class="text-muted">Días hábiles son lunes a viernes que no son feriados</small>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <small class="text-muted">Empezamos a contar desde el día habil siguiente de la fecha de inicio</small>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <small class="text-muted">Usamos la lista de <a href="http://www.feriadoschilenos.cl/">feriados chilenos</a></small>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-5">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <% if @holydaysOut.empty? %>
+                <h4>😜 No hay feriados</h4>
+            <% else%>
+                <h4>👀 Atento a estos feriados</h4>
+                <% @holydaysDateOut.zip(@holydaysDescOut).each do |date, desc| %>
+                <p class="fw-bold mb-0"><%= date %></p>
+                <p class="text-secondary"><%= desc %></p>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <h5 class="text-secondary">🍉 SANDÍA HÁBIL</h5>
+            <h1 class="display-5">Contamos los días hábiles en el calendario por ti</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <p class="text-muted">Deja de contar los días a mano como en el pasado. Ingresa la fecha de inicio, los días hábiles y te decimos cuándo tienes que entregar ese proyecto</p>
+            <small class="text-muted">Usamos la lista de <a href="http://www.feriadoschilenos.cl/">feriados chilenos</a></small>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-5">
+            <%= form_with url: result_path do |f| %>
+                <div class="form-group">
+                    <%= f.text_field :startDate, class: 'form-control mb-2', data: { behavior: 'flatpickr' } %>
+                    <%= f.number_field :workingDays, class: 'form-control mb-2', placeholder: 'Días hábiles' %>
+                    <%= f.submit "A contar los días", class: 'btn btn-primary btn-block' %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
