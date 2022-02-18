@@ -4,6 +4,10 @@ class HomeController < ApplicationController
   end
   
   def result
+    if request.post?
+      redirect_to(result_url(startDate: params["startDate"], workingDays: params["workingDays"]))
+    end
+    
     # Feriados (Debería declararlos en otra parte?)
     holydays = {
     "01-01-2021" => "🎉 Año Nuevo",
