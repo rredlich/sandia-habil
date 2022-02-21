@@ -9,9 +9,17 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script defer data-domain="sandia-habil.herokuapp.com" src="https://plausible.zembia.cl/js/plausible.js"></script>
   </head>
 
   <body>
     <%= yield %>
+
+    <div class="container">
+      <footer class="pt-5 my-4">
+          <p class="text-center text-muted border-top pt-3"><small>Hecho con ❤️ &nbsp;por Rodolfo Redlich · <a href="https://github.com/rredlich" target="_blank" class="text-decoration-none">github</a></small></p>
+      </footer>
+    </div>
   </body>
 </html>
